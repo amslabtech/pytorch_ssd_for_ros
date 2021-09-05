@@ -1,0 +1,61 @@
+
+FROM ubuntu:20.04
+
+########## non-interactive ##########
+## Avoiding "Country of origin for the keyboard" 
+## in "apt-get install -y ros-noetic-desktop-full"
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get install -y \
+	vim \
+	wget \
+	unzip \
+	git \
+	build-essential
+
+RUN apt-get update && \
+	apt-get install -y python3-pip
+
+RUN pip3 install \
+		tqdm \
+		matplotlib \
+		tensorflow \
+		tensorboardX
+
+RUN pip3 install torch==1.9.0+cpu torchvision==0.10.0+cpu torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
+RUN pip3 install pandas boto3
+
+########## ROS Noetic insatall ##########
+## NOTE: "lsb_release" -> "lsb-release"
+RUN apt-get update && apt-get install -y lsb-release &&\
+	sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list' &&\
+	apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654 &&\
+	apt-get update && apt-get install -y ros-noetic-desktop-full
+########## ROS setup ##########
+RUN mkdir -p /home/ros_catkin_ws/src && \
+	cd /home/ros_catkin_ws/src && \
+	/bin/bash -c "source /opt/ros/noetic/setup.bash; catkin_init_workspace" && \
+	cd /home/ros_catkin_ws && \
+	/bin/bash -c "source /opt/ros/noetic/setup.bash; catkin_make" && \
+	echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc && \
+	echo "source /home/ros_catkin_ws/devel/setup.bash" >> ~/.bashrc && \
+	echo "export ROS_PACKAGE_PATH=\${ROS_PACKAGE_PATH}:/home/ros_catkin_ws" >> ~/.bashrc && \
+	echo "export ROS_WORKSPACE=/home/ros_catkin_ws" >> ~/.bashrc
+## cmk
+RUN echo "function cmk(){\n	lastpwd=\$OLDPWD \n	cpath=\$(pwd) \n cd /home/ros_catkin_ws \n catkin_make \$@ \n cd \$cpath \n	OLDPWD=\$lastpwd \n}" >> ~/.bashrc
+########## dnn_attitude_estimation ##########
+##### NO cache #####
+ARG CACHEBUST=1
+
+RUN cd /home/ros_catkin_ws/src && \
+		cd /home/ros_catkin_ws && \
+		/bin/bash -c "source /opt/ros/noetic/setup.bash; catkin_make"
+
+RUN mkdir /home/models && \
+    cd /home/models && \
+    wget -P models https://storage.googleapis.com/models-hao/mb2-ssd-lite-mp-0_686.pth && \
+    wget -P models https://storage.googleapis.com/models-hao/voc-model-labels.txt
+
+RUN cd /home/ros_catkin_ws/src
+
+WORKDIR /home/ros_catkin_ws/src

@@ -1,0 +1,29 @@
+<launch>
+
+    <!-- image_transport -->
+    <node pkg="image_transport" type="republish" name="republish_f" args="compressed raw">
+        <remap from="in" to="/front_right_camera/color/image_raw"/>
+		<remap from="out" to="/camera_f/decompressed_image"/>
+	</node>
+    <node pkg="image_transport" type="republish" name="republish_l" args="compressed raw">
+		<remap from="in" to="/realsense_l/color/image_raw"/>
+		<remap from="out" to="/camera_l/decompressed_image"/>
+	</node>
+	<node pkg="image_transport" type="republish" name="republish_b" args="compressed raw">
+		<remap from="in" to="/realsense_b/color/image_raw"/>
+		<remap from="out" to="/camera_b/decompressed_image"/>
+	</node>
+	<node pkg="image_transport" type="republish" name="republish_r" args="compressed raw">
+		<remap from="in" to="/realsense_r/color/image_raw"/>
+		<remap from="out" to="/camera_r/decompressed_image"/>
+	</node>
+
+    <node pkg="pytorch_ssd_ros" name="image_infer" type="image_infer.py" output="screen">
+        <param name="subscribe_topic_name" value="/camera_f/decompressed_image" />
+        <param name="advertise_topic_name" value="/inferenced_image_front" />
+        <param name="weights_path" value="/home/models/models/mb2-ssd-lite-mp-0_686.pth" />
+        <param name="label_path" value="/home/models/models/voc-model-labels.txt" />
+        <param name="net_type" value="mb2-ssd-lite" />
+    </node>
+
+</launch>

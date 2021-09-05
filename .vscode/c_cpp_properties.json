@@ -1,0 +1,55 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/amsl/catkin_ws/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/amsl/catkin_ws/src/navigation/amcl/include/**",
+        "/home/amsl/catkin_ws/src/amsl_navigation_managers/amsl_navigation_managers/include/**",
+        "/home/amsl/catkin_ws/src/attitude_estimator_with_neural_network/include/**",
+        "/home/amsl/catkin_ws/src/navigation/base_local_planner/include/**",
+        "/home/amsl/catkin_ws/src/bnn_attitude_predictor_with_image/include/**",
+        "/home/amsl/catkin_ws/src/navigation/carrot_planner/include/**",
+        "/home/amsl/catkin_ws/src/navigation/clear_costmap_recovery/include/**",
+        "/home/amsl/catkin_ws/src/cnn_attitude_estimator/include/**",
+        "/home/amsl/catkin_ws/src/navigation/costmap_2d/include/**",
+        "/home/amsl/catkin_ws/src/deep_visual_gravity_vector_detection_for_unmanned_aircraft_attitude_estimation/include/**",
+        "/home/amsl/catkin_ws/src/dnn_attitude_predictor_with_image/include/**",
+        "/home/amsl/catkin_ws/src/navigation/dwa_local_planner/include/**",
+        "/home/amsl/catkin_ws/src/dynamic_cloud_detector/include/**",
+        "/home/amsl/catkin_ws/src/navigation/global_planner/include/**",
+        "/home/amsl/catkin_ws/src/localmap_creator/include/**",
+        "/home/amsl/catkin_ws/src/navigation/map_server/include/**",
+        "/home/amsl/catkin_ws/src/navigation/move_base/include/**",
+        "/home/amsl/catkin_ws/src/navigation/move_slow_and_clear/include/**",
+        "/home/amsl/catkin_ws/src/navigation/nav_core/include/**",
+        "/home/amsl/catkin_ws/src/navigation/navfn/include/**",
+        "/home/amsl/catkin_ws/src/nexus_4wd_mecanum_simulator/nexus_4wd_mecanum_gazebo/include/**",
+        "/home/amsl/catkin_ws/src/num_regression_attitude_estimator/include/**",
+        "/home/amsl/catkin_ws/src/perfect_velodyne/include/**",
+        "/home/amsl/catkin_ws/src/road_recognizer/include/**",
+        "/home/amsl/catkin_ws/src/navigation/rotate_recovery/include/**",
+        "/home/amsl/catkin_ws/src/slam_toolbox/slam_toolbox/include/**",
+        "/home/amsl/catkin_ws/src/sparse_bundle_adjustment/include/**",
+        "/home/amsl/catkin_ws/src/sq2/sq2_teleop/include/**",
+        "/home/amsl/catkin_ws/src/sq2/sq_lidar/include/**",
+        "/home/amsl/catkin_ws/src/turtlebot3_simulations/turtlebot3_fake/include/**",
+        "/home/amsl/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/include/**",
+        "/home/amsl/catkin_ws/src/turtlebot3/turtlebot3_slam/include/**",
+        "/home/amsl/catkin_ws/src/velodyne/velodyne_driver/include/**",
+        "/home/amsl/catkin_ws/src/velodyne_height_map/include/**",
+        "/home/amsl/catkin_ws/src/velodyne/velodyne_laserscan/include/**",
+        "/home/amsl/catkin_ws/src/velodyne/velodyne_pcl/include/**",
+        "/home/amsl/catkin_ws/src/velodyne/velodyne_pointcloud/include/**",
+        "/home/amsl/catkin_ws/src/navigation/voxel_grid/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ],
+  "version": 4
+}
