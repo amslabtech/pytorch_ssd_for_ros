@@ -1,7 +1,7 @@
 #!/bin/bash
 
 image_name="pytorch_ssd_ros"
-tag_name="melodic"
+tag_name="melodic_ver2"
 root_path=$(pwd)
 
 # /media/amsl/96fde31e-3b9b-4160-8d8a-a4b913579ca21

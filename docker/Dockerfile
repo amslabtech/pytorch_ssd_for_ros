@@ -25,7 +25,9 @@ RUN pip3 install \
 RUN pip3 install pandas \
 				boto3
 
-RUN pip3 install torch==1.0.0 torchvision==0.2.1
+RUN pip3 install -U https://download.pytorch.org/whl/cu100/torch-1.0.0-cp36-cp36m-linux_x86_64.whl
+
+RUN pip3 install torchvision==0.2.1
 
 RUN pip3 install --upgrade pip
 RUN pip3 install opencv-python

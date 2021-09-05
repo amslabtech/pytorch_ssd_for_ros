@@ -218,7 +218,7 @@ is the annotation file.
 ### Retrain
 
 ```bash
-python train_ssd.py --dataset_type open_images --datasets ~/data/open_images --net mb1-ssd --pretrained_ssd models/mobilenet-v1-ssd-mp-0_675.pth --scheduler cosine --lr 0.01 --t_max 100 --validation_epochs 5 --num_epochs 100 --base_net_lr 0.001  --batch_size 5
+python3 train_ssd.py --dataset_type open_images --datasets /home/ssd_dir/traffic_light_open_images/ --net mb2-ssd-lite --pretrained_ssd /home/models/models/mb2-ssd-lite-mp-0_686.pth --scheduler cosine --lr 0.01 --t_max 100 --validation_epochs 50 --num_epochs 200 --base_net_lr 0.001  --batch_size 32
 ```
 
 You can freeze the base net, or all the layers except the prediction heads. 
