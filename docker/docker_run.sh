@@ -17,5 +17,5 @@ docker run -it --rm \
     --net=host \
     --shm-size=8192m \
     -v /media/amsl/96fde31e-3b9b-4160-8d8a-a4b913579ca21:/home/ssd_dir \
-	-v /home/amsl/catkin_ws/src/pytorch_ssd_ros:/home/ros_catkin_ws/src/pytorch_ssd_ros \
+	-v /home/amsl/catkin_ws/src/pytorch_ssd_for_ros:/home/ros_catkin_ws/src/pytorch_ssd_for_ros \
 	$image_name:$tag_name

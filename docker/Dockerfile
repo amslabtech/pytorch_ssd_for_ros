@@ -18,11 +18,17 @@ RUN pip3 install \
 		tqdm \
 		matplotlib \
 		tensorflow \
-		tensorboardX
+		tensorboardX \
+		scikit-build \
+		cmake
 
-RUN pip3 install pandas boto3
+RUN pip3 install pandas \
+				boto3
 
 RUN pip3 install torch==1.0.0 torchvision==0.2.1
+
+RUN pip3 install --upgrade pip
+RUN pip3 install opencv-python
 
 ########## ROS Melodic insatall ##########
 ## NOTE: "lsb_release" -> "lsb-release"
