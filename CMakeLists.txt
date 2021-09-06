@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(pytorch_ssd_ros)
+project(pytorch_ssd_for_ros)
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>pytorch_ssd_ros</name>
+  <name>pytorch_ssd_for_ros</name>
   <version>0.0.0</version>
   <description>The pytorch_ssd_ros package</description>
 

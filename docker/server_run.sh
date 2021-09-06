@@ -18,4 +18,5 @@ docker run -it --rm \
     --shm-size=8192m \
     -v /home/kawai/later_delete:/home/ssd_dir \
 	-v /home/kawai/pytorch_ssd_for_ros:/home/ros_catkin_ws/src/pytorch_ssd_for_ros \
+    -v /share:/home/hornet \
 	$image_name:$tag_name
