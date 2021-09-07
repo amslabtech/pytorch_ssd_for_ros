@@ -16,7 +16,7 @@ docker run -it --rm \
 	--volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
     --net=host \
     --shm-size=8192m \
-    -v /home/kawai/later_delete:/home/ssd_dir \
+    -v /media/amsl/96fde31e-3b9b-4160-8d8a-a4b913579ca21:/home/ssd_dir \
 	-v /home/kawai/pytorch_ssd_for_ros:/home/ros_catkin_ws/src/pytorch_ssd_for_ros \
     -v /share:/home/hornet \
 	$image_name:$tag_name
